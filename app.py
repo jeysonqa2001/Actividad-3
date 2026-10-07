@@ -1,20 +1,24 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+ESTUDIANTES = [
+    {"nombre": "Ana Pérez", "carrera": "Sistemas"},
+    {"nombre": "Luis Rojas", "carrera": "Industrial"},
+    {"nombre": "María Flores", "carrera": "Civil"},
+]
+
 @app.route("/")
 def inicio():
-    return "Bienvenido a flask"
+    return render_template("inicio.html")
 
 @app.route("/estudiantes")
 def estudiantes():
-    return "Lista de estudiantes"
-
+    return render_template("estudiantes.html", estudiantes=ESTUDIANTES)
 
 @app.route("/contacto")
 def contacto():
-    return "pagina de contacto"
-
+    return render_template("contacto.html")
 
 
 if __name__ == "__main__":

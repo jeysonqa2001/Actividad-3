@@ -1,0 +1,244 @@
+:root {
+  color-scheme: light;
+  --bg: #f2f4f7;
+  --surface: #ffffff;
+  --text: #161b24;
+  --muted: #5a6474;
+  --line: #d5dae2;
+  --accent: #1f5fbf;
+  --accent-text: #ffffff;
+  --shadow: 0 4px 14px rgba(20, 30, 50, 0.08);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141a24;
+  --surface: #1d2634;
+  --text: #eef0f3;
+  --muted: #a3adbd;
+  --line: #2d3949;
+  --accent: #6aa5ff;
+  --accent-text: #0e1420;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+main { flex: 1; }
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.logo { margin: 0; font-size: 1.4rem; color: var(--accent); }
+
+.menu {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu a:hover {
+  background: var(--bg);
+  color: var(--accent);
+}
+
+.btn-tema {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-tema:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- Secciones ---------- */
+.seccion {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.seccion h2 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+/* ---------- Inicio (hero) ---------- */
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent), #7a4fd6);
+  color: #fff;
+}
+
+.hero h2 { font-size: 2.6rem; margin: 0 0 0.5rem; }
+.hero p { font-size: 1.15rem; margin: 0 auto 1.5rem; max-width: 560px; opacity: 0.95; }
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  background: #fff;
+  color: #1f2a44;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.tarjeta {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.tarjeta h3 { margin: 0 0 0.4rem; color: var(--accent); }
+.tarjeta p { margin: 0; color: var(--muted); }
+
+/* ---------- Estudiantes ---------- */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tabla th, .tabla td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.tabla th {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.tabla tbody tr:hover { background: var(--bg); }
+.tabla tbody tr:last-child td { border-bottom: none; }
+
+/* ---------- Contacto ---------- */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-lista { list-style: none; padding: 0; margin: 0; }
+.info-lista li { padding: 0.5rem 0; border-bottom: 1px solid var(--line); }
+.info-lista li:last-child { border-bottom: none; }
+
+.formulario label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: 600;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: transparent;
+}
+
+.formulario button {
+  margin-top: 1rem;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.7rem 1.6rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-text);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.formulario button:hover { transform: translateY(-2px); }
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.footer p { margin: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .header { flex-wrap: wrap; gap: 0.8rem; }
+  .menu { order: 3; width: 100%; margin-left: 0; justify-content: center; }
+  .btn-tema { margin-left: auto; }
+  .hero h2 { font-size: 2rem; }
+}

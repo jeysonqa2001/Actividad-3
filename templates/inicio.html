@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+  <section class="hero">
+    <h2>Bienvenido a Mi Proyecto</h2>
+    <p>Una aplicación hecha con Flask para gestionar estudiantes y contacto.</p>
+    <a class="btn" href="{{ url_for('estudiantes') }}">Ver estudiantes</a>
+  </section>
+
+  <section class="seccion">
+    <h2>¿Qué puedes hacer aquí?</h2>
+    <div class="tarjetas">
+      <article class="tarjeta">
+        <h3>Estudiantes</h3>
+        <p>Consulta la lista completa de estudiantes registrados.</p>
+      </article>
+      <article class="tarjeta">
+        <h3>Contacto</h3>
+        <p>Escríbenos y resuelve tus dudas rápidamente.</p>
+      </article>
+      <article class="tarjeta">
+        <h3>Modo oscuro</h3>
+        <p>Cambia entre tema claro y oscuro con el botón de arriba.</p>
+      </article>
+    </div>
+  </section>
+{% endblock %}
