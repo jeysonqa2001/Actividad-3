@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block titulo %}Contacto{% endblock %}
+
+{% block contenido %}
+  <section class="seccion">
+    <h2>Contacto</h2>
+    <div class="contacto-grid">
+
+      <div class="tarjeta">
+        <h3>Información</h3>
+        <ul class="info-lista">
+          <li>📧 jeyson.zuazo@miproyecto.com</li>
+          <li>📞 +591 79971448</li>
+          <li>📍 Cochabamba, Bolivia</li>
+        </ul>
+      </div>
+
+      <form class="tarjeta formulario"
+            onsubmit="event.preventDefault(); alert('Mensaje enviado (demo)'); this.reset();">
+        <h3>Envíanos un mensaje</h3>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" required>
+
+        <label for="correo">Correo</label>
+        <input id="correo" type="email" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+    </div>
+  </section>
+{% endblock %}

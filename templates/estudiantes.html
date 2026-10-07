@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block titulo %}Estudiantes{% endblock %}
+
+{% block contenido %}
+  <section class="seccion">
+    <h2>Lista de estudiantes</h2>
+    <p style="color: var(--muted);">Total registrados: {{ estudiantes|length }}</p>
+    <table class="tabla">
+      <thead>
+        <tr><th>#</th><th>Nombre</th><th>Carrera</th></tr>
+      </thead>
+      <tbody>
+        {% for e in estudiantes %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ e.nombre }}</td>
+          <td>{{ e.carrera }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+{% endblock %}
